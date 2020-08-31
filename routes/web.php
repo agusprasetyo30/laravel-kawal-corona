@@ -18,3 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('/corona', 'CoronaController@chart');
+
+Route::get('/data-corona', 'CoronaController@getDataCorona')->name('get_data_corona');
