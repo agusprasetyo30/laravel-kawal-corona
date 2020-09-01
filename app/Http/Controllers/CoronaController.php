@@ -13,8 +13,8 @@ class CoronaController extends Controller
     {
         $a = Chartisan::build()
             ->labels(['A', 'B', 'CC'])
-            ->dataset('Sample', [1, 2, 3])
-            ->dataset('Sample 2', [3, 2, 1])->toJSON();
+            ->dataset('Sample', [1, 2, 3, 4, 6, 1, 10, 500, 4, 30])
+            ->dataset('Sample 2', [3, 2, 1, 1, 6, 7, 1, 6, 10, 40])->toJSON();
 
         // dd($a);
         // Mengambil data API kawal corona
@@ -34,10 +34,11 @@ class CoronaController extends Controller
 
     public function getDataCorona()
     {
+        
         return Chartisan::build()
-            ->labels(['A', 'B', 'CC'])
-            ->dataset('Sample', [1, 2, 3])
-            ->dataset('Sample 2', [3, 2, 1])
+            ->labels(['A', 'B', 'CC', 'a', 'a', 'a', 's', 'f', 'f', '1'])
+            ->dataset('Sample', [1, 2, 3, 4, 6, 1, 10, 50, 4, 30])
+            ->dataset('Sample 2', [3, 2, 1, 1, 6, 7, 1, 6, 10, 40])
             ->toJSON();
     }
 }

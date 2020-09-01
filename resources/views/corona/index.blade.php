@@ -12,20 +12,62 @@
    <!-- Chart's container -->
    <div id="chart" style="height: 300px;"></div>
    <!-- Charting library -->
-   <script src="https://unpkg.com/chart.js@2.9.3/dist/Chart.min.js"></script>
+   <script src="{{ asset('vendor/laravel-chart/Chart.min.js') }}"></script>
    <!-- Chartisan -->
-   <script src="https://unpkg.com/@chartisan/chartjs@^2.1.0/dist/chartisan_chartjs.umd.js"></script>
+   <script src="{{ asset('vendor/laravel-chart/chartisan_chartjs.umd.js') }}"></script>
    <!-- Your application script -->
-
+   <script src="{{ asset('vendor/laravel-chart/chartjs-plugin-datalabels.js') }}"></script>
    <script>
       const chart = new Chartisan({
          el: '#chart',
          url: "{{ route('get_data_corona') }}",
-         hooks: new ChartisanHooks()
-            .colors(['#ECC94B', '#4299E1', '#AAEE11'])
-            .legend({ position: 'bottom' })
-            .beginAtZero()
-            .datasets([{ type: 'line', fill: false }, 'bar']),
+            hooks: new ChartisanHooks()
+               .colors(['#ECC94B', '#4299E1', '#AAEE11'])
+               .legend({ position: 'top' })               
+               .datasets(['bar'])
+               .responsive()
+               .options({
+                  options: {
+                     title: {
+                        display: true,
+                        text: 'Daftar Kasus Corona Di Indonesia',
+                        fontSize: 20,
+                     },
+                     tooltips: {
+                        mode: 'index',
+                        intersect: false
+                     },
+                     responsive: true,
+                     scales: {
+                        xAxes: [{
+                           ticks: {
+                              beginAtZero: true
+                           },
+                           stacked: false
+                        }],
+                        yAxes: [{
+                           stacked: false,
+                           ticks: {
+                              beginAtZero: true
+                           },
+                        }]
+                     },
+                     plugins: {
+                        datalabels: {
+                           align: 'end',
+                           anchor: 'end',
+                           backgroundColor: function(context) {
+                              return context.dataset.backgroundColor;
+                           },
+                           borderRadius: 4,
+                           color: 'white',
+                           formatter: function(value){
+                              return value;
+                           }
+                        }
+                     }
+                  }
+               }),
       });
    </script>
    

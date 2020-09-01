@@ -46,7 +46,7 @@ class CoronaChart extends BaseChart
     {
     //     // return $request->all();
         return Chartisan::build()
-            ->labels(['a'])
+            ->labels(['a', 'b'])
             ->dataset('Sample', [1, 2, 3])
             ->dataset('Sample 2', [3, 2, 1]);
     }
