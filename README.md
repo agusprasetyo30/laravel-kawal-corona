@@ -11,7 +11,7 @@
 - 0.0.3
    - Add page for chart
    - Research for new laravel chart version
-
+s
 - 0.0.2
   - Add Corona Controller & Install Package for chart
 
@@ -23,3 +23,7 @@
 - Laravel Chart
   - [Laravel Chart](https://charts.erik.cat/)
   - [Chartisan](https://chartisan.dev/)
+
+- API
+  - [https://data.covid19.go.id/public/api/prov.json](https://data.covid19.go.id/public/api/prov.json)
+  - [https://data.covid19.go.id/public/api/update.json](https://data.covid19.go.id/public/api/update.json)
