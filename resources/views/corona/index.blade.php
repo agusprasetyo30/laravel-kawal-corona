@@ -1,75 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <title>Document</title>
-</head>
-<body>
-   <h1>Hallooo</h1>
+@extends('layouts.app')
 
-   <!-- Chart's container -->
-   <div id="chart" style="height: 300px;"></div>
-   <!-- Charting library -->
-   <script src="{{ asset('vendor/laravel-chart/Chart.min.js') }}"></script>
-   <!-- Chartisan -->
-   <script src="{{ asset('vendor/laravel-chart/chartisan_chartjs.umd.js') }}"></script>
-   <!-- Your application script -->
-   <script src="{{ asset('vendor/laravel-chart/chartjs-plugin-datalabels.js') }}"></script>
+@section('title', 'Data Covid Se-Indonesia')
+
+@section('content')
+
+<div class="container mt-3 mb-3">
+   <h3 class="font-weight-bold">Jumlah Kasus di Indonesia Saat Ini</h3>
+   <div class="row">
+      <div class="col-lg-3 col-6">
+         <!-- small box -->
+         <div class="small-box bg-info">
+            <div class="inner">
+               
+               <h3 class="count">{{ convertDecimal($data_total['jumlah_positif']) }}</h3>
+               
+               <p>TERKONFIRMASI</p>
+            </div>
+            <div class="icon">
+               <i class="ion ion-plus"></i>
+            </div>
+            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+         </div>
+      </div>
+      <!-- ./col -->
+      <div class="col-lg-3 col-6">
+         <!-- small box -->
+         <div class="small-box bg-success">
+            <div class="inner">
+               <h3 class="count">{{ convertDecimal($data_total['jumlah_dirawat']) }}</h3>
+               
+               <p>KASUS AKTIF</p>
+            </div>
+            <div class="icon">
+               <i class="ion ion-medkit"></i>
+            </div>
+            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+         </div>
+      </div>
+      <!-- ./col -->
+      <div class="col-lg-3 col-6">
+         <!-- small box -->
+         <div class="small-box bg-warning">
+            <div class="inner">
+               <h3 class="count">{{ convertDecimal($data_total['jumlah_sembuh']) }}</h3>
+               
+               <p>SEMBUH</p>
+            </div>
+            <div class="icon">
+               <i class="ion ion-ios-bell"></i>
+            </div>
+            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+         </div>
+      </div>
+      <!-- ./col -->
+      <div class="col-lg-3 col-6">
+         <!-- small box -->
+         <div class="small-box bg-danger">
+            <div class="inner">
+               <h3 class="count">{{ convertDecimal($data_total['jumlah_meninggal']) }}</h3>
+               
+               <p>MENINGGAL</p>
+            </div>
+            <div class="icon">
+               <i class="ion ion-minus"></i>
+            </div>
+            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+         </div>
+      </div>
+   <!-- ./col -->
+   </div>
+</div>
+
+@endsection
+
+@push('js')
    <script>
-      const chart = new Chartisan({
-         el: '#chart',
-         url: "{{ route('get_data_corona') }}",
-            hooks: new ChartisanHooks()
-               .colors(['#ECC94B', '#4299E1', '#AAEE11'])
-               .legend({ position: 'top' })               
-               .datasets(['bar'])
-               .responsive()
-               .options({
-                  options: {
-                     title: {
-                        display: true,
-                        text: 'Daftar Kasus Corona Di Indonesia',
-                        fontSize: 20,
-                     },
-                     tooltips: {
-                        mode: 'index',
-                        intersect: false
-                     },
-                     responsive: true,
-                     scales: {
-                        xAxes: [{
-                           ticks: {
-                              beginAtZero: true
-                           },
-                           stacked: false
-                        }],
-                        yAxes: [{
-                           stacked: false,
-                           ticks: {
-                              beginAtZero: true
-                           },
-                        }]
-                     },
-                     plugins: {
-                        datalabels: {
-                           align: 'end',
-                           anchor: 'end',
-                           backgroundColor: function(context) {
-                              return context.dataset.backgroundColor;
-                           },
-                           borderRadius: 4,
-                           color: 'white',
-                           formatter: function(value){
-                              return value;
-                           }
-                        }
-                     }
-                  }
-               }),
-      });
+      // $('.count').each(function () {
+      //       $(this).prop('Counter', 0).animate({
+      //          Counter: $(this).text()
+      //       }, {
+      //       duration: 3000,
+      //       easing: 'swing',
+      //       step: function (now) {
+      //             $(this).text(Math.ceil(now));
+      //       }
+      //    });
+      // });
    </script>
-   
-</body>
-</html>
+
+@endpush

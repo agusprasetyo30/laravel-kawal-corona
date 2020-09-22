@@ -23,6 +23,7 @@ s
 - Laravel Chart
   - [Laravel Chart](https://charts.erik.cat/)
   - [Chartisan](https://chartisan.dev/)
+  - [https://www.chartjs.org/](https://www.chartjs.org/)
 
 - API
   - [https://data.covid19.go.id/public/api/prov.json](https://data.covid19.go.id/public/api/prov.json)
