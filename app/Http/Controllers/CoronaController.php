@@ -18,20 +18,13 @@ class CoronaController extends Controller
         // Dan menjadikan collection 
         $data = new CoronaApiUpdate();
 
+        // Mengambil data total
         $data_total = $data->getUpdateDataTotal();
 
-        // Mengambil data terakhir update
-        // Menampung list_data pada API
-        // $suspectData = $suspect->flatten();
-        // $last_date = $suspect['last_date'];
-        // $list_data = collect($suspect['list_data']);
+        // Mengambil data penambahan data harian corona
+        $data_penambahan = $data->getPenambahanDataHarian();
 
-        // dd($list_data->pluck('key')->toArray());
-        // dd($list_data->pluck('jenis_kelamin'));
-        // dd(collect($suspect['list_data']));
-        // dd($suspect->getBody()->getContents());
-
-        return view('corona.index', compact('data_total'));
+        return view('corona.index', compact('data_total', 'data_penambahan'));
     }
 
     public function getDataCorona()

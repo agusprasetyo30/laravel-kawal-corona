@@ -9,9 +9,9 @@
   - Add plugin Datalabel Chart
 
 - 0.0.3
-   - Add page for chart
-   - Research for new laravel chart version
-s
+  - Add page for chart
+  - Research for new laravel chart version
+
 - 0.0.2
   - Add Corona Controller & Install Package for chart
 

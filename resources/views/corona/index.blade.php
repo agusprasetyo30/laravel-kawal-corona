@@ -2,7 +2,23 @@
 
 @section('title', 'Data Covid Se-Indonesia')
 
+@push('css')
+   <style>
+      .header-judul {
+         font-family: 'Times New Roman', Times, serif;
+         padding: 50px;
+         font-size: 35px;
+      }
+   </style>
+@endpush
+
 @section('content')
+
+<div class="container-fluid bg-primary">
+   <div class="text-center header-judul">
+      Peta Sebaran
+   </div>
+</div>
 
 <div class="container mt-3 mb-3">
    <h3 class="font-weight-bold">Jumlah Kasus di Indonesia Saat Ini</h3>
@@ -12,9 +28,11 @@
          <div class="small-box bg-info">
             <div class="inner">
                
-               <h3 class="count">{{ convertDecimal($data_total['jumlah_positif']) }}</h3>
+               <h3>{{ convertDecimal($data_total['jumlah_positif']) }}</h3>
                
-               <p>TERKONFIRMASI</p>
+               <h6 class="font-weight-bold">TERKONFIRMASI</h6>
+               <h6 class="font-weight-bold">+{{ $data_penambahan['jumlah_positif'] }} Kasus Positif</h6>
+
             </div>
             <div class="icon">
                <i class="ion ion-plus"></i>
@@ -27,9 +45,11 @@
          <!-- small box -->
          <div class="small-box bg-success">
             <div class="inner">
-               <h3 class="count">{{ convertDecimal($data_total['jumlah_dirawat']) }}</h3>
+               <h3>{{ convertDecimal($data_total['jumlah_dirawat']) }}</h3>
                
-               <p>KASUS AKTIF</p>
+               <h6 class="font-weight-bold">KASUS AKTIF</h6>
+               <h6 class="font-weight-bold">+{{ $data_penambahan['jumlah_dirawat'] }} Jumlah Dirawat</h6>
+
             </div>
             <div class="icon">
                <i class="ion ion-medkit"></i>
@@ -42,9 +62,11 @@
          <!-- small box -->
          <div class="small-box bg-warning">
             <div class="inner">
-               <h3 class="count">{{ convertDecimal($data_total['jumlah_sembuh']) }}</h3>
+               <h3>{{ convertDecimal($data_total['jumlah_sembuh']) }}</h3>
                
-               <p>SEMBUH</p>
+               <h6 class="font-weight-bold">SEMBUH</h6>
+               <h6 class="font-weight-bold">+{{ $data_penambahan['jumlah_sembuh'] }} Kasus Sembuh</h6>
+
             </div>
             <div class="icon">
                <i class="ion ion-ios-bell"></i>
@@ -57,9 +79,10 @@
          <!-- small box -->
          <div class="small-box bg-danger">
             <div class="inner">
-               <h3 class="count">{{ convertDecimal($data_total['jumlah_meninggal']) }}</h3>
+               <h3>{{ convertDecimal($data_total['jumlah_meninggal']) }}</h3>
                
-               <p>MENINGGAL</p>
+               <h6 class="font-weight-bold">MENINGGAL</h6>
+               <h6 class="font-weight-bold">+{{ $data_penambahan['jumlah_meninggal'] }} Kasus Meninggal</h6>
             </div>
             <div class="icon">
                <i class="ion ion-minus"></i>
@@ -69,6 +92,9 @@
       </div>
    <!-- ./col -->
    </div>
+
+   <label class="font-weight-light">Pembaruan Terakhir</label>
+   <p>{{ $data_penambahan['tanggal'] }}</p>
 </div>
 
 @endsection
