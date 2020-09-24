@@ -9,6 +9,11 @@
          padding: 50px;
          font-size: 35px;
       }
+      
+      .tanggal {
+         font-size: 18px;
+         font-weight: bold;
+      }
    </style>
 @endpush
 
@@ -93,8 +98,8 @@
    <!-- ./col -->
    </div>
 
-   <label class="font-weight-light">Pembaruan Terakhir</label>
-   <p>{{ $data_penambahan['tanggal'] }}</p>
+   <label class="font-weight-light m-0" style="font-size: 11px">Pembaruan Terakhir</label>
+   <p class="tanggal">{{ convertTanggal($data_penambahan['tanggal']) }}</p>
 </div>
 
 @endsection
