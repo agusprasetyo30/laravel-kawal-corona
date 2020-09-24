@@ -4,6 +4,13 @@
 
 # Versioning
 
+- 0.0.5
+  - Add sub value penambahan for display & tanggal update realtime
+  - Add header view
+  - add Helpers global
+  - add API for `total` & `penambahan`
+  - add library/template ADMIN LTE
+
 - 0.0.4
   - Finish Research chart version
   - Add plugin Datalabel Chart
