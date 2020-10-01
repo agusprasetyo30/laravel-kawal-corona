@@ -12,6 +12,9 @@
    @stack('css')
 </head>
 <body>
+   
+   @include('layouts.navbar')
+
    <div class="container-fluid p-0">
       @yield('content')
    </div>

@@ -13,11 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/corona', 'CoronaController@chart');
+Route::get('/', 'CoronaController@chart');
 
 Route::get('/data-corona', 'CoronaController@getDataCorona')->name('get_data_corona');
+
+// Route::group(['prefix' => 'data'], function () {
+
+   Route::get('/tuban', 'TubanController@index');
+
+// });
 
