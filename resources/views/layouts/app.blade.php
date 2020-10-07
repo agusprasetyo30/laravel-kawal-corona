@@ -9,6 +9,15 @@
    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/ion-icon/css/ionicons.min.css') }}">
    <link rel="stylesheet" href="{{ asset('vendor/adminlte/css/adminlte.min.css') }}">
 
+   <style>
+      .nav-link.active{
+         /* background-color: #007BFF; */
+      }
+
+      nav-item > a.nav-link{
+         /* color: white; */
+      }
+   </style>
    @stack('css')
 </head>
 <body>

@@ -17,13 +17,15 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', 'CoronaController@chart');
+Route::get('/', 'CoronaController@chart')->name('corona.indonesia');
 
-Route::get('/data-corona', 'CoronaController@getDataCorona')->name('get_data_corona');
+Route::get('/data-tuban', 'TubanController@index')->name('corona.tuban');
+
+
+// Route::get('/data-corona', 'CoronaController@getDataCorona')->name('get_data_corona');
 
 // Route::group(['prefix' => 'data'], function () {
 
-   Route::get('/tuban', 'TubanController@index');
 
 // });
 

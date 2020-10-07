@@ -4,21 +4,26 @@
 
    class CoronaApiUpdate
    {
+      /**
+       * Untuk mengambil data API
+       *
+       * @return void
+       */
       public function getAPICorona()
       {
          try {
-            //code...
             $suspect = collect(Http::get('https://data.covid19.go.id/public/api/update.json')->json());
+         
+            return collect($suspect["update"]);
+
          } catch (\Throwable $th) {
-            // dd($th->getMessage());
             abort(500, $th->getMessage());
          }
-            
-         return collect($suspect["update"]);
+
       }
 
       /**
-       * Undocumented function
+       * Mengambil data array key "penambahan" untuk mengambil data penambahan perhari
        *
        * @return void
        */
@@ -30,7 +35,7 @@
       }
 
       /**
-       * Undocumented function
+       * Mengambil data array key "total" untuk mengambil data total keseluruhan
        *
        * @return void
        */
