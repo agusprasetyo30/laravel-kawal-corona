@@ -116,10 +116,10 @@
             <thead>
             <tr>
                <th style="width: 10px">#</th>
-               <th>Provinsi </th>
-               <th>Positif</th>
-               <th>Sembuh</th>
-               <th>Meninggal</th>
+               <th>Provinsi</th>
+               <th><span class="badge bg-warning">&nbsp;&nbsp;</span> Positif</th>
+               <th><span class="badge bg-success">&nbsp;&nbsp;</span> Sembuh</th>
+               <th><span class="badge bg-danger">&nbsp;&nbsp;</span> Meninggal</th>
                <th>Dirawat</th>
             </tr>
             </thead>
