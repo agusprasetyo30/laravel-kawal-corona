@@ -6,6 +6,8 @@
 
 - 0.0.6
   - Add data province in view & controller
+  - Add `customPagination` in Helper to make custom pagination with data API
+  - Add Pagination
 
 - 0.0.5
   - Add sub value penambahan for display & tanggal update realtime
