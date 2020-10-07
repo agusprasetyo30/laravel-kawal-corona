@@ -125,31 +125,36 @@
             </thead>
             <tbody>
                
-            @foreach ($data_provinsi as $key => $data)
-               <tr>
-                     
-                  <td>{{ ++$key }}.</td>
-                  <td><b>{{ $data['key'] }}</b></td>
-                  <td width="150">
-                     <b class="nominal-provinsi">{{ convertDecimal($data['jumlah_kasus']) }}</b>
-                     <span class="badge bg-warning">+{{ convertDecimal($data['penambahan']['positif']) }}</span>
-                  </td>
-                  <td width="150">
-                     <b class="nominal-provinsi">{{ convertDecimal($data['jumlah_sembuh']) }}</b>
-                     <span class="badge bg-success">+{{ convertDecimal($data['penambahan']['sembuh']) }}</span>
-                  </td>
-                  <td width="150">
-                     <b class="nominal-provinsi">{{ convertDecimal($data['jumlah_kasus']) }}</b>
-                     <span class="badge bg-danger">+{{ convertDecimal($data['penambahan']['meninggal']) }}</span>
-                  </td>
-                  <td width="150">
-                     <b class="nominal-provinsi">{{ convertDecimal($data['jumlah_dirawat']) }}</b>
-                  </td>
-                  {{-- <td><span class="badge bg-danger">55%</span></td> --}}
-               </tr>
-            @endforeach
+               @foreach ($data_provinsi as $key => $data)
+                  <tr>
+                        
+                     <td>{{ ++$key }}.</td>
+                     <td><b>{{ $data['key'] }}</b></td>
+                     <td width="150">
+                        <b class="nominal-provinsi">{{ convertDecimal($data['jumlah_kasus']) }}</b>
+                        <span class="badge bg-warning">+{{ convertDecimal($data['penambahan']['positif']) }}</span>
+                     </td>
+                     <td width="150">
+                        <b class="nominal-provinsi">{{ convertDecimal($data['jumlah_sembuh']) }}</b>
+                        <span class="badge bg-success">+{{ convertDecimal($data['penambahan']['sembuh']) }}</span>
+                     </td>
+                     <td width="150">
+                        <b class="nominal-provinsi">{{ convertDecimal($data['jumlah_kasus']) }}</b>
+                        <span class="badge bg-danger">+{{ convertDecimal($data['penambahan']['meninggal']) }}</span>
+                     </td>
+                     <td width="150">
+                        <b class="nominal-provinsi">{{ convertDecimal($data['jumlah_dirawat']) }}</b>
+                     </td>
+                     {{-- <td><span class="badge bg-danger">55%</span></td> --}}
+                  </tr>
+               @endforeach
             </tbody>
          </table>
+      </div>
+      <div class="card-footer">
+         <div class="row justify-content-center">
+            {{ $data_provinsi->appends(Request::all())->links() }}
+         </div>
       </div>
       <!-- /.card-body -->
       </div>

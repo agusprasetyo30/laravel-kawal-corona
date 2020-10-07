@@ -4,6 +4,9 @@
 
 # Versioning
 
+- 0.0.6
+  - Add data province in view & controller
+
 - 0.0.5
   - Add sub value penambahan for display & tanggal update realtime
   - Add header view

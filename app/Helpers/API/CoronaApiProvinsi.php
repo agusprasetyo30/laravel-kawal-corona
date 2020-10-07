@@ -13,7 +13,7 @@
       {
          $suspect = collect(Http::get('https://data.covid19.go.id/public/api/prov.json')->json());
       
-         return collect($suspect);
+         return $suspect;
       }
 
       /**
@@ -23,9 +23,9 @@
        */
       public function getProvinceData()
       {
-         $data = $this->getAPICorona();
+         $data = collect($this->getAPICorona()['list_data']);
 
-         return $data['list_data'];
+         return $data;
       }
 
       /**

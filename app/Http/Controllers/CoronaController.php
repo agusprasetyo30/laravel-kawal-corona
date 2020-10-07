@@ -27,7 +27,14 @@ class CoronaController extends Controller
         // Instansiasi untuk mengambil data corona per provinsi
         $data_api_provinsi = new CoronaApiProvinsi;
 
-        $data_provinsi = collect($data_api_provinsi->getProvinceData());
+        // Jumlah data yang akan ditampilkan
+        $number_pagination = 15;
+
+        // Mengambil data provinsi berdasarkan fungsi yang dibuat di helpers
+        // dan merubah menjadi pagination sesuai permintaan
+        $data_provinsi = customPaginate($data_api_provinsi->getProvinceData(), $number_pagination);
+
+        // dd($data_provinsi);
 
         // dd($data_provinsi->pluck('penambahan'));
         return view('corona.index', compact('data_total', 'data_penambahan', 'data_provinsi'));
