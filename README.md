@@ -4,6 +4,10 @@
 
 # Versioning
 
+- 0.0.7
+  - Update PHP 7.3.24
+  - "consoletvs/charts": "^6",
+
 - 0.0.6
   - Add data province in view & controller
   - Add `customPagination` in Helper to make custom pagination with data API

@@ -21,6 +21,9 @@ Route::get('/', 'CoronaController@chart')->name('corona.indonesia');
 
 Route::get('/data-tuban', 'TubanController@index')->name('corona.tuban');
 
+Route::get('riset1', function () {
+    return view('riset');
+});
 
 // Route::get('/data-corona', 'CoronaController@getDataCorona')->name('get_data_corona');
 

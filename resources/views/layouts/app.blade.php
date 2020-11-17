@@ -36,7 +36,6 @@
    <script src="{{ asset('vendor/adminlte/plugins/chart.js/Chart.min.js') }}"></script>
    <!-- AdminLTE App -->
    <script src="{{ asset('vendor/adminlte/js/adminlte.min.js') }}"></script>
-    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/fontawesome-free/css/all.min.css') }}">
 
    <!-- Charting library -->
    <script src="{{ asset('vendor/laravel-chart/Chart.min.js') }}"></script>
