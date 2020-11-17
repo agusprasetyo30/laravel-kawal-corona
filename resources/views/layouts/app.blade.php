@@ -39,9 +39,9 @@
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/fontawesome-free/css/all.min.css') }}">
 
    <!-- Charting library -->
-   <script src="{{ asset('vendor/laravel-chart/Chart.min.js') }}"></script>
+   {{-- <script src="{{ asset('vendor/laravel-chart/Chart.min.js') }}"></script> --}}
    <!-- Chartisan -->
-   <script src="{{ asset('vendor/laravel-chart/chartisan_chartjs.umd.js') }}"></script>
+   {{-- <script src="{{ asset('vendor/laravel-chart/chartisan_chartjs.umd.js') }}"></script> --}}
    <!-- Your application script -->
    {{-- <script src="{{ asset('vendor/laravel-chart/chartjs-plugin-datalabels.js') }}"></script> --}}
    @stack('js')

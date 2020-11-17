@@ -14,18 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Route::get('/', function () {
-//     return view('welcome');
+   //  return view('welcome');
 // });
 
-Route::get('/', 'CoronaController@chart')->name('corona.indonesia');
+Route::get('/', 'ExampleController@index')->name('example.index');
 
-Route::get('/data-tuban', 'TubanController@index')->name('corona.tuban');
-
-
-// Route::get('/data-corona', 'CoronaController@getDataCorona')->name('get_data_corona');
-
-// Route::group(['prefix' => 'data'], function () {
-
-
-// });
 

@@ -1,5 +1,23 @@
-# Laravel Kawal Corona
+# Laravel Kawal Corona (__BASE TEMPLATE ONLY__)
 
+# Clone
+* `$ git clone https://github.com/agusprasetyo30/laravel-kawal-corona.git --branch base-template`
+* `$ cd laravel-kawal-corona`
+* `$ composer update`
+* copy `env.example` dan rubah menjadi `.env`, setelah itu konfigurasi database
+* `$ php artisan key:generate`
+* `$ php artisan serve` jalankan program
+
+# Folder View
+  - Untuk Base Template
+    ~~~
+    views
+    ├── example
+        ├── index.blade.php       # Untuk menampilkan data
+    ├── layouts
+        ├── app.blade.php         # Main Layout untuk menampung layout lainnya (Base/Master Template)
+        ├── navbar.blade.php      # Untuk menampung data menu
+    ~~~
 # ScreenShot
 
 # Versioning
