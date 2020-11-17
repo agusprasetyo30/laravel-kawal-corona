@@ -8,7 +8,7 @@
 * `$ php artisan key:generate`
 * `$ php artisan serve` jalankan program
 
-# Folder View
+# Folder View & Note
   - Untuk Base Template
     ~~~
     views
@@ -16,8 +16,33 @@
         ├── index.blade.php       # Untuk menampilkan data
     ├── layouts
         ├── app.blade.php         # Main Layout untuk menampung layout lainnya (Base/Master Template)
-        ├── navbar.blade.php      # Untuk menampung data menu
+        ├── navbar.blade.php      # Untuk menampung data yang berisi menu
     ~~~
+
+  - Note/Keterangan
+    - Untuk memanggil/menambahkan data yang terdapat di ``views/layouts/navbar``
+    ```php
+      // app.blade.php
+      @include('layouts.navbar')
+    ``` 
+
+    - `@yield()` Sebagai penanda bagian yang akan bersifat dinamis/bisa berubah
+    ```php
+      // app.blade.php
+
+      @yield('title') // Untuk mengubah dan menambahkan judul/title
+
+      @yield('content') // Untuk mengubah/menambahkan konten (nanti berita ditaruh disini)
+    ``` 
+
+    - `@stack()` Digunakan untuk memberikan data sesuai dengan kebutuhan (Biasane aku ngawe CSS & JS di halaman tertentu)
+
+    - `@extends('layouts.app')` Digunakan untuk memanggil BASE TEMPLATE
+
+    - `@section('title', 'isi_dari_title')` Digunakan untuk mengisi data `@yield('title')` yang sudah ditambahkan
+
+    - `@section('content')` Digunakan untuk mengisi data `@yield('content')` yang sudah ditambahkan
+
 # ScreenShot
 
 # Versioning
